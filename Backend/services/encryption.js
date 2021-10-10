@@ -1,5 +1,5 @@
 const crypto = require('crypto')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 const hashPassword = (password) => bcrypt.hash(password, 10)
 
