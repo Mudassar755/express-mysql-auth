@@ -1,0 +1,1051 @@
+{
+"data": [{
+    "title": "Car Basic Details",
+    "data": [{
+    "title": "Registration Number",
+    "type": "text",
+    "name": "registration_number"
+    },
+    {
+        "title": "Chasis Number",
+        "type": "text",
+        "name": "chasis_number"
+    },
+    {
+        "title": "Engine Number",
+        "type": "text",
+        "name": "engine_number"
+    },
+    {
+        "title": "Engine Capacity",
+        "type": "number",
+        "name": "engine_capacity"
+    },
+    {
+        "title": "Make",
+        "type": "dropdown",
+        "values": makes,
+        "name": "make"
+    },
+    {
+        "title": "Model",
+        "type": "dropdown",
+        "values": models,
+        "name": "model"
+    },
+    {
+        "title": "Model Year",
+        "type": "dropdown",
+        "values": ["1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018"],
+        "name": "year"
+    },
+    {
+        "title": "Trim/Variant",
+        "type": "dropdown",
+        "values": variants,
+        "name": "trim_variant"
+    },
+    {
+        "title": "Mileage",
+        "type": "number",
+        "name": "mileage"
+    },
+    {
+        "title": "Transmission Type",
+        "type": "dropdown",
+        "values": ["automatic", "manual"],
+        "name": "tranmission_type"
+    },
+    {
+        "title": "Fuel Type",
+        "type": "dropdown",
+        "values": ["petrol", "diesel", "hybrid", "cng", "lng"],
+        "name": "fuel_type"
+    },
+    {
+        "title": "Original Color - Exterior",
+        "type": "dropdown",
+        "values": colors,
+        "name": "body_color"
+    },
+    {
+        "title": "Registeration City",
+        "type": "dropdown",
+        "values": cities,
+        "name": "registered_city_id"
+    },
+    {
+        "title": "Registeration Year",
+        "type": "dropdown",
+        "values": ["1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018", "2019"],
+        "name": "registered_year"
+    }]
+    },{
+    "title": "Photos",
+    "data": []
+    }, { 
+    "title": "Damages",
+    "data": []
+    }, {
+        "title": "Front",
+        "data": [{
+        "title": "Front Rail",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "front_rail"
+    },
+    {
+        "title": "Front Brakes Right",
+        "type": "dropdown",
+        "values": goodFairBad(),
+        "name": "fr_brakes"
+    },
+    {
+        "title": "Front Brakes Left",
+        "type": "dropdown",
+        "values": goodFairBad(),
+        "name": "fl_brakes"
+    },
+    {
+        "title": "Tappet Noise",
+        "type": "dropdown",
+        "values": yesNoNa(),
+        "name": "tappet_noise"
+    },
+    {
+        "title": "Throttle Linkage",
+        "type": "dropdown",
+        "values": yesNoNa(),
+        "name": "throttle_linkage"
+    },
+    {
+        "title": "Radiator Core Support",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "radiator_core_support"
+    },
+    {
+        "title": "Strut Tower Apron",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "strut_tower_apron"
+    },
+    {
+        "title": "Foundations",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "foundations"
+    },
+    {
+        "title": "Engine Mountings",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "engine_mountings"
+    },
+    {
+        "title": "Firewall",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "firewall"
+    },
+    {
+        "title": "Power Steering Fluid",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "power_steering_fluid"
+    },
+    {
+        "title": "Brake Oil",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "brake_oil"
+    },
+    {
+        "title": "Battery",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "battery"
+    },
+    {
+        "title": "Fuse box is original",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "fuse_box_is_original"
+    },
+    {
+        "title": "Radiator is OK",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "radiator_is_ok"
+    },
+    {
+        "title": "Coolant Leak",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "coolant_leak"
+    },
+    {
+        "title": "A/C Fan is working",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "ac_fan_working"
+    },
+    {
+        "title": "Engine Sheild",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "engine_shield"
+    },
+    {
+        "title": "Clutch Plate/Pressure Pate",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "clutch_plate"
+    },
+    {
+        "title": "Engine is noise free",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "engine_noise_free"
+    },
+    {
+        "title": "Engine Oil",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "engine_oil"
+    },
+    {
+        "title": "Engine oil has no leakage",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "engine_no_leakage"
+    },
+    {
+        "title": "Catalytic convertor is availible",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "catalytic_converter"
+    },
+    {
+        "title": "A/C compressor",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "ac_compressor"
+    },
+    {
+        "title": "Condenser",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "condenser"
+    },
+    {
+        "title": "Bonnet Seals",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "bonnet_seals"
+    },
+    {
+        "title": "Bonnet Hinge + Catch",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "bonnet_hinge"
+    },
+    {
+        "title": "Engine Pipes/Hoses",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "hoses"
+    },
+    {
+        "title": "Water Pump",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "water_pump"
+    },
+    {
+        "title": "Suction Fan",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "suction_fan"
+    },
+    {
+        "title": "Alternator",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "alternator"
+    },
+    {
+        "title": "Belt (Fan)",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "belts_fan"
+    },
+    {
+        "title": "Belt (AC)",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "belts_ac"
+    },
+    {
+        "title": "Belt (drive)",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "drive_belts"
+    },
+    {
+        "title": "Wires (wiring harness)",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "wires"
+    },
+    {
+        "title": "Linkage",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "linkage"
+    },
+    {
+        "title": "Drive Shafts Assemblies",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "drive_shaft_assemblies"
+    },
+    {
+        "title": "Transmission Fluid/Oil Leaks",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "transmission_leaks"
+    },
+    {
+        "title": "Transmission Gear Mountings",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "transmission_gear_mountings"
+    },
+    {
+        "title": "Transmission Universal/Sliding Joints",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "transmission_joints"
+    },
+    {
+        "title": "Transmission Gaiters/Boots",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "transmission_boots"
+    },
+    {
+        "title": "Transmission Support/Bearings",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "transmission_bearings"
+    },
+    {
+        "title": "Gear Lever",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "gear_lever"
+    },
+    {
+        "title": "Exhaust Manifold",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "exhaust_manifold"
+    },
+    {
+        "title": "Exhaust Leaks",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "exhaust_leaks"
+    },
+    {
+        "title": "Exhaust Pipes",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "exhaust_pipes"
+    },
+    {
+        "title": "Enigine Condition",
+        "type": "radio",
+        "values": "",
+        "name": "engine_condition"
+    },
+    {
+        "title": "Front Windscreen",
+        "type": "checkbox",
+        "values": glass_damage,
+        "name": "front_windscreen"
+    },
+    {
+        "title": "Bonnet",
+        "type": "checkbox",
+        "values": damage,
+        "name": "bonnet_damage"
+    },
+    {
+        "title": "Front Bumper",
+        "type": "checkbox",
+        "values": damage,
+        "name": "front_bumper_damage"
+    }]
+    },{
+    "title": "Front Right",
+        "data": [{
+        "title": "Front Right Shock Absorber",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fr_shock_absorber"
+    },
+    {
+        "title": "Front Right Axle",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fr_axle"
+    },
+    {
+        "title": "Front Right Gaiters/Boot",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fr_boots"
+    },
+    {
+        "title": "Front Right bushes",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fr_bushes"
+    },
+    {
+        "title": "Front Right connector/Zlink",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fr_bush_connector_zlink"
+    },
+    {
+        "title": "Front Right ball joint",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fr_ball_joint"
+    },
+    {
+        "title": "Steering Box",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "steering_box"
+    },
+    {
+        "title": "Steering Rack Box",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "steering_rack_box"
+    },
+    {
+        "title": "Rack End",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "rack_end"
+    },
+    {
+        "title": "Bump Stops",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "bump_stops"
+    },
+    {
+        "title": "Pipes Hoses",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "pipes_hoses"
+    },
+    {
+        "title": "Tie Bars/Anti-roll Bars",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "tie_bars"
+    },
+    {
+        "title": "Front Differential",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "front_differential"
+    },
+    {
+        "title": "Power Steering",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "power_steering"
+    },
+    {
+        "title": "Suspension Arms/Mountings",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "suspension_arms"
+    },
+    {
+        "title": "Wheel Hubs/Bearings",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "wheel_hubs"
+    },
+    {
+        "title": "Sub Frames/Mountings",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "sub_frames"
+    },
+    {
+        "title": "Front right door seals & nuts",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fr_door_seals_nuts"
+    },
+    {
+        "title": "Door Locking",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "door_locking"
+    },
+    {
+        "title": "Power windows",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "power_Windows"
+    },
+    {
+        "title": "Front right seat controls",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fr_seat_controls"
+    },
+    {
+        "title": "Headlight Assembly",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "headlight_assembly"
+    },
+    {
+        "title": "Steering Wheel",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "steering_wheel"
+    },
+    {
+        "title": "Steering Wheel Switches",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "steering_wheel_switches"
+    },
+    {
+        "title": "Multi Media Audio/Video",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "multi_media_av"
+    },
+    {
+        "title": "Climate Control A/C",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "climate_control_ac"
+    },
+    {
+        "title": "Air Conditioner",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "air_conditioner"
+    },
+    {
+        "title": "Heater",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "heater"
+    },
+    {
+        "title": "Clutch Plate/Pressure Plate",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "clutch_plate"
+    },
+    {
+        "title": "ABS",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "abs"
+    },
+    {
+        "title": "Airbags are functional",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "airbags_functional"
+    },
+    {
+        "title": "Speedometer Cluster",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "speedometer_cluster"
+    },
+    {
+        "title": "A/C Grills OK",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "ac_grills_ok"
+    },
+    {
+        "title": "Parking Brake",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "parking_brake"
+    },
+    {
+        "title": "Hand Brake Operation",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "hand_brake_operation"
+    },
+    {
+        "title": "Staring System/Ignition Lock",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "staring_system"
+    },
+    {
+        "title": "Horn Operational",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "horn_operational"
+    },
+    {
+        "title": "Front Right - Manufacturer",
+        "type": "text",
+        "values": "rear left - manufacturer",
+        "name": ""
+    },
+    {
+        "title": "Front Right - Size",
+        "type": "text",
+        "values": "rear left - size",
+        "name": ""
+    },
+    {
+        "title": "Front Right - Date",
+        "type": "date",
+        "values": "rear left - date",
+        "name": ""
+    },
+    {
+        "title": "Front Right - Tred (mm)",
+        "type": "number",
+        "values": "rear left - tred (mm)",
+        "name": ""
+    },
+    {
+        "title": "Front Right Fender",
+        "type": "checkbox",
+        "values": damage,
+        "name": "fr_fender_damage"
+    },
+    {
+        "title": "Front Right Door",
+        "type": "checkbox",
+        "values": damage,
+        "name": "fr_door_damage"
+    },
+    {
+        "title": "Right Panel",
+        "type": "checkbox",
+        "values": damage,
+        "name": "right_panel_damage"
+    },
+    {
+        "title": "Right Pillar",
+        "type": "checkbox",
+        "values": damage,
+        "name": "right_pillar_damage"
+    }],
+    },{
+    "title": "Back Right",
+        "data": [{
+        "title": "Rear Right Shock Absorber",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "rr_shock_absorber"
+    },
+    {
+        "title": "Rear Right Bushes",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "rear_right_bushes"
+    },
+    {
+        "title": "Back Right Door Seals & Nuts",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "rr_door_seals_nuts"
+    },
+    {
+        "title": "Back Right Bumper Shield",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "rr_bumper_shield"
+    },
+    {
+        "title": "Back Right Door",
+        "type": "checkbox",
+        "values": damage,
+        "name": "rr_door_damage"
+    },
+    {
+        "title": "Back Right Fender",
+        "type": "checkbox",
+        "values": damage,
+        "name": "rr_fender_damage"
+    },
+    {
+        "title": "Rear Right - Manufacturer",
+        "type": "text",
+        "name": ""
+    },
+    {
+        "title": "Rear Right - Size",
+        "type": "text",
+        "name": ""
+    },
+    {
+        "title": "Rear Right - Date",
+        "type": "date",
+        "values": "rear left - date",
+        "name": ""
+    },
+    {
+        "title": "Rear Right - Tred (mm)",
+        "type": "number",
+        "values": "rear left - tred (mm)",
+        "name": ""
+    }]
+    },{
+    "title": "Back",
+    "data": [{
+        "title": "Back lock rail",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "back_lock_rail"
+    },
+    {
+        "title": "Trunk floor is OK",
+        "type": "radio",
+        "values": yesNo(),
+        "name": "trunk_floor_is_ok"
+    },
+    {
+        "title": "Trunk Seals",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "trunk_seals"
+    },
+    {
+        "title": "Back Pastings",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "back_pastings"
+    },
+    {
+        "title": "Tail lights are working",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "tail_lights_working"
+    },
+    {
+        "title": "Rear Windscreen",
+        "type": "radio",
+        "values": glass_damage,
+        "name": "rear_windscreen"
+    },
+    {
+        "title": "Trunk",
+        "type": "checkbox",
+        "values": damage,
+        "name": "trunk"
+    },
+    {
+        "title": "Rear Bumper",
+        "type": "checkbox",
+        "values": damage,
+        "name": "rear_bumper"
+    },
+    {
+        "title": "Tool Kit",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "tool_kit"
+    },
+    {
+        "title": "Spare Wheel",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "spare_wheel"
+    },
+    {
+        "title": "Air Pump",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "air_pump"
+    },
+    {
+        "title": "Puncture Kit is Present",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "puncture_kit_present"
+    },
+    {
+        "title": "Rear Right Disk Pad",
+        "type": "dropdown",
+        "values": goodFairBad(),
+        "name": "rr_disk_pad"
+    },
+    {
+        "title": "Rear Left Disk Pad",
+        "type": "dropdown",
+        "values": goodFairBad(),
+        "name": "rl_disk_pad"
+    }]
+    },{
+    "title": "Back Left",
+        "data": [{
+        "title": "Rear Left Shock Absorbers",
+        "type": "dropdown",
+        "values": goodFairBad(),
+        "name": "rl_shock_absorbers"
+    },
+    {
+        "title": "Rear Left Bushes",
+        "type": "dropdown",
+        "values": goodFairBad(),
+        "name": "rl_bushes"
+    },
+    {
+        "title": "Back left door seals & nuts",
+        "type": "dropdown",
+        "values": goodFairBad(),
+        "name": "bl_door_seals"
+    },
+    {
+        "title": "Back left bumper shield",
+        "type": "dropdown",
+        "values": goodFairBad(),
+        "name": "bl_bumper_shield"
+    },
+    {
+        "title": "Petrol lid",
+        "type": "dropdown",
+        "values": goodFairBad(),
+        "name": "petrol_lid"
+    },
+    {
+        "title": "Back Left Door",
+        "type": "checkbox",
+        "values": damage,
+        "name": "bl_door_damage"
+    },
+    {
+        "title": "Back Left Fender",
+        "type": "checkbox",
+        "values": damage,
+        "name": "bl_fender_damage"
+    },
+    {
+        "title": "Rear Left - Manufacturer",
+        "type": "text",
+        "values": "rear left - manufacturer",
+        "name": ""
+    },
+    {
+        "title": "Rear Left - Size",
+        "type": "text",
+        "values": "rear left - size",
+        "name": ""
+    },
+    {
+        "title": "Rear Left - Date",
+        "type": "date",
+        "values": "rear left - date",
+        "name": ""
+    },
+    {
+        "title": "Rear Left - Tred (mm)",
+        "type": "number",
+        "values": "rear left - tred (mm)",
+        "name": ""
+    }]
+    },{
+    "title": "Front Left",
+        "data": [{
+        "title": "Front Left Shock Absorber",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fl_shock_absorber"
+    },
+    {
+        "title": "Front Left Axle",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fl_axle"
+    },
+    {
+        "title": "Front Left Gaiters/Boot",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fl_boots"
+    },
+    {
+        "title": "Front Left bushes",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fl_bushes"
+    },
+    {
+        "title": "Front Left connector/Zlink",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fl_bush_connector_zlink"
+    },
+    {
+        "title": "Front Left ball joint",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fl_ball_joint"
+    },
+    {
+        "title": "Front Left door seals & nuts",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fl_door_seals_nuts"
+    },
+    {
+        "title": "Front left seat controls",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fl_seat_controls"
+    },
+    {
+        "title": "Sun Roof",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "sun_roof"
+    },
+    {
+        "title": "Front Left - Manufacturer",
+        "type": "radio",
+        "values": "text field",
+        "name": ""
+    },
+    {
+        "title": "Front Left - Size",
+        "type": "radio",
+        "values": "text field",
+        "name": ""
+    },
+    {
+        "title": "Front Left - Date",
+        "type": "radio",
+        "values": "date picker",
+        "name": ""
+    },
+    {
+        "title": "Front Left - Tred (mm)",
+        "type": "radio",
+        "values": "numeric",
+        "name": ""
+    },
+    {
+        "title": "Front Left Fender",
+        "type": "checkbox",
+        "values": damage,
+        "name": "fl_fender_damage"
+    },
+    {
+        "title": "Roof",
+        "type": "checkbox",
+        "values": damage,
+        "name": "roof_damage"
+    },
+    {
+        "title": "Left Pillar",
+        "type": "checkbox",
+        "values": damage,
+        "name": "left_pillar_damage"
+    },
+    {
+        "title": "Left Panel",
+        "type": "checkbox",
+        "values": damage,
+        "name": "left_panel_damage"
+    },
+    {
+        "title": "Front Left Door",
+        "type": "checkbox",
+        "values": damage,
+        "name": "fl_door_damage"
+    }]
+    },{
+    "title": "Accessories",
+    "data": [{
+        "title": "Fog Lights",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "fog_lights"
+    },
+    {
+        "title": "Push Start",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "push_start"
+    },
+    {
+        "title": "TV",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "tv"
+    },
+    {
+        "title": "Immobilizer Key",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "immobilizer_key"
+    },
+    {
+        "title": "Retractable Side Mirrors",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "retractable_side_mirrors"
+    },
+    {
+        "title": "Cigarette Lighter",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "cigarette_lighter"
+    },
+    {
+        "title": "Cameras",
+        "type": "radio",
+        "values": yesNoNa(),
+        "name": "cameras"
+    },
+    {
+        "title": "Interior Condition",
+        "type": "radio",
+        "values": array_n(5),
+        "name": "interior_condition"
+    },
+    {
+        "title": "Exterior Condition",
+        "type": "radio",
+        "values": array_n(5),
+        "name": "exterior_condition"
+    }]
+    },{
+    "title": "Comments",
+    "data": [{
+        "title": "Comments",
+        "type": "text",
+        "values": "",
+        "name": "comments"
+    }]
+}]
