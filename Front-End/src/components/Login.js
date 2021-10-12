@@ -9,22 +9,22 @@ import { login} from '../services/AuthService';
 import UserService from '../services/UserService';
 
 import {Redirect} from 'react-router-dom'
+import axios from 'axios';
+import { useHistory } from "react-router-dom"
 
 const Login = () => {
+  let history = useHistory();
 const [formData, setFormData] = useState({
     email:"",
     password:""
 })
+const [error, setError] = useState({
+  message: "",
+  type: ""
+})
 const [loggedIn, setLoggedIn] = useState(false)
 const { email, password } = formData;
 
-// const onChange = e => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-// }
-// const onChange = name => event => {
-//     // this.setState({[name]: event.target.value}); 
-//     setFormData({ ...formData, [name]: event.target.value })
-//   }
   const handleChange = (prop) => (event) => {
     setFormData({ ...formData, [prop]: event.target.value });
   };
@@ -32,16 +32,30 @@ const { email, password } = formData;
     ev.preventDefault()
 
     try {
-      let user = await login(email, password)
+      // let user = await login(email, password)
+      const user = axios.post(process.env.REACT_APP_API_URL + '/auth/local/', {
+        email,
+        password
+      })
+      localStorage.setItem("token", user.data.token)
+      history.push("/")
       console.log("userrr", user)
     //   localStorage.setItem('token', user.data.token)
       UserService.setUser(user.data)
       setLoggedIn(true)
     } catch(err) {
+      const errors = err.response.data.errors;
+      if (errors) {
+        errors.forEach(error => setError({ message: error.msg, type: "error" }));
+      }
       console.log(err)
     }
   }
 
+  if (localStorage.getItem("token")) {
+    history.push('/');
+    return <></>
+}
   return (
         <Grid item xs={12}>
       <Grid

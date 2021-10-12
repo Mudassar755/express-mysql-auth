@@ -28,7 +28,7 @@ export const getUser = () => {
     return false
 }
 
-export const deleteUser = () => localStorage.removeItem(LOCAL_STORAGE_KEY)
+export const deleteUser = () => localStorage.removeItem("token")
 
 export const apiGetUsers = (page = 1, params={}) => axios.get(API_URL + "/users", {
 	params: {

@@ -7,54 +7,78 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import { register } from '../services/AuthService';
 import UserService from '../services/UserService';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import Stack from '@mui/material/Stack';
+import axios from 'axios';
+import { useHistory } from "react-router-dom"
 
 const Register = () => {
-const [formData, setFormData] = useState({
-    name:"",
-    email:"",
-    password:""
-})
-const { name, email, password } = formData;
+  let history = useHistory();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: ""
+  })
+  const { name, email, password } = formData;
+  const [error, setError] = useState({
+    message: "",
+    type: ""
+  })
 
-// const onChange = e => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-// }
-// const onChange = name => event => {
-//     // this.setState({[name]: event.target.value}); 
-//     setFormData({ ...formData, [name]: event.target.value })
-//   }
   const handleChange = (prop) => (event) => {
     setFormData({ ...formData, [prop]: event.target.value });
   };
-const handleRegister = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault()
 
     try {
-      let user = await register(name, email, password)
-      console.log("usdersv;kjnsdvs", user)
-      UserService.setUser(user.data)
-    //   this.props.onLogin()
-    } catch(err) {
+      // let user = await register(name, email, password)
+      const user = await axios.post(process.env.REACT_APP_API_URL + '/auth/register/', {
+        name,
+        email,
+        password
+      })
+      // console.log("usdersv;kjnsdvs", user)
+      localStorage.setItem("token", user.data.token)
+     history.push("/")
+    } catch (err) {
+      const errors = err.response.data.errors;
+      if (errors) {
+        errors.forEach(error => setError({ message: error.msg, type: "error" }));
+      }
       console.log(err)
-      this.setState({error: "Failed to login"})
     }
-};
+  };
+  if (localStorage.getItem("token")) {
+    history.push('/');
+    return <></>
+}
   return (
-        <Grid item xs={12}>
+    <Grid item xs={12}>
+
       <Grid
         alignItems="center"
         justify="center"
         container
         spacing={2}
       >
-        <Grid  justify="center"alignItems="center" item xs={8}> 
-        <Paper  style={{padding: "20px 0" }}>
-            <Grid  item xs={7} style={{margin: "auto"} }>
-                <div style={{textAlign: 'center'}}><h1>Car Pro Login</h1></div>
-                {/* <div className="login-logo"><img src={Logo} /></div> */}
-                <form onSubmit={handleRegister}>
-            <div className="form_field">
-            {/* <FormControl >
+        <Grid justify="center" alignItems="center" item xs={8}>
+          <Paper style={{ padding: "20px 0" }}>
+            <Grid item xs={7} style={{ margin: "auto" }}>
+              {/* {error.message &&
+              <Stack sx={{ width: '100%' }} spacing={2}>
+                <Alert severity={error.type}>
+                  <AlertTitle>Error</AlertTitle>
+                  <strong>{error.message}</strong>
+                </Alert>
+                </Stack>
+              } */}
+              <div style={{ textAlign: 'center' }}><h1>Car Pro Login</h1></div>
+              {/* <div className="login-logo"><img src={Logo} /></div> */}
+              <form onSubmit={handleRegister}>
+                <div className="form_field">
+                  {/* <FormControl >
           <Input
             id="name"
             type="text"
@@ -63,34 +87,34 @@ const handleRegister = async (e) => {
           />
           <FormHelperText id="standard-weight-helper-text">Weight</FormHelperText>
         </FormControl> */}
-              <TextField
-                label="Name"
-                value={name}
-                onChange={handleChange('name')}
-              />
-            </div>
-            <div className="form_field">
-              <TextField
-                label="Email"
-                value={email}
-                onChange={handleChange('email')}
-              />
-            </div>
-            <div className="form_field">
-              <TextField
-                label="Password"
-                value={password}
-                onChange={handleChange('password')}
-                type="password"
-              />
-            </div>
-            <div>
-              <Button type="submit" variant="contained" color="primary">Register</Button>
-            </div>
+                  <TextField
+                    label="Name"
+                    value={name}
+                    onChange={handleChange('name')}
+                  />
+                </div>
+                <div className="form_field">
+                  <TextField
+                    label="Email"
+                    value={email}
+                    onChange={handleChange('email')}
+                  />
+                </div>
+                <div className="form_field">
+                  <TextField
+                    label="Password"
+                    value={password}
+                    onChange={handleChange('password')}
+                    type="password"
+                  />
+                </div>
+                <div>
+                  <Button type="submit" variant="contained" color="primary">Register</Button>
+                </div>
 
-          </form>
+              </form>
             </Grid>
-        </Paper>
+          </Paper>
         </Grid>
       </Grid>
     </Grid>
