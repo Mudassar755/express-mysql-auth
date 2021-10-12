@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
+const mailRouter = require('./routes/mail');
 
 const authService = require('./services/auth')
 
@@ -35,6 +36,7 @@ app.use(authService.authRequest)
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter)
+app.use('/mail', mailRouter)
 
 
 app.use((err, req, res, next) => {

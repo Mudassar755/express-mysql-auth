@@ -13,9 +13,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        role_id: {
-            type: DataTypes.INTEGER
-        }
     }, {
         underscored: true,
         hooks: {
