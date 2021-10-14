@@ -7,26 +7,30 @@ module.exports = (sequelize, DataTypes) => {
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false
         },
+        googleId:{
+            type: DataTypes.STRING
+        },
+        facebookId:{
+            type: DataTypes.STRING
+        }
     }, {
         underscored: true,
-        hooks: {
-            beforeCreate: async (user, options) => {
-                console.log(user.password)
-                user.password = await encryption.hashPassword(user.password)
-                return user
-            },
-            beforeUpdate: async(user, options) => {
-                if(user._previousDataValues.password != user.password)
-                    user.password = await encryption.hashPassword(user.password)
-                return user
-            }
-        },
+        // hooks: {
+        //     beforeCreate: async (user, options) => {
+        //         console.log(user.password)
+        //         user.password = await encryption.hashPassword(user.password)
+        //         return user
+        //     },
+        //     beforeUpdate: async(user, options) => {
+        //         if(user._previousDataValues.password != user.password)
+        //             user.password = await encryption.hashPassword(user.password)
+        //         return user
+        //     }
+        // },
         defaultScope: {
             attributes: { exclude: ['password', 'createdAt', 'updatedAt'] }
         }

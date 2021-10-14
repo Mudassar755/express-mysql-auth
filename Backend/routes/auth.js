@@ -12,6 +12,7 @@ const { check, validationResult } = require("express-validator");
 const jwt = require('jsonwebtoken')
 const User = require('../models').user
 const bcrypt = require('bcryptjs')
+const passport = require("passport")
 /**
  * User authentication local
  */
@@ -147,6 +148,31 @@ router.post('/register', [
     //     token: token
     // })
 })
+router.get("/facebook", passport.authenticate("facebook",{
+    scope: ['public_profile', 'email']
+  }))
+
+  router.get("/facebook/callback", passport.authenticate("facebook"), (req,res)=>{
+    res.send(req.user);
+    res.send("you reached the redirect URI");
+  });
+router.get("/google", passport.authenticate("google", {
+    scope: ["profile", "email"]
+  }));
+
+router.get("/google/callback", passport.authenticate("google"), (req,res)=>{
+    res.send(req.user);
+    res.send("you reached the redirect URI");
+  });
+  router.get("/logout", (req, res) => {
+    req.logout();
+    res.send(req.user);
+  });
+  router.get("/user", (req, res) => {
+    res.send(req.user);
+  });
+
+
 router.get("/", auth, async (req, res) => {
     // req.session.destroy();
     console.log(req.user)

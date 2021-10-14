@@ -13,6 +13,7 @@
     "dotenv": "^8.0.0",
     "email-templates": "^8.0.8",
     "express": "~4.16.1",
+    "express-session": "^1.17.2",
     "express-validator": "^6.0.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
@@ -20,6 +21,9 @@
     "multer": "^1.4.1",
     "mysql2": "^1.6.5",
     "nodemailer": "^6.7.0",
+    "passport": "^0.5.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
     "pdf-image": "^2.0.0",
     "sequelize": "^5.8.11",
     "validator": "^11.0.0"
